@@ -1,23 +1,50 @@
 ﻿#include <iostream>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+
+#define delimiter "\n--------------------------------------------\n"
+
+const int ROWS = 5;
+const int COLS = 8;
 
 void FillRand(int arr[], const int n,int minRand=0,int maxRand=100);
 void FillRand(double arr[], const int n);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS,int minRand = 0,int maxRand = 100);
+
 void Print(const int arr[], const int n);
 void Print(const double arr[], const int n);
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
+
 int Sum(const int arr[], const int n);
+int Sum(const int arr[ROWS][COLS], const int ROWS,const int COLS);
+
 double Avg(const int arr[], const int n);
+double Avg(const int arr[ROWS][COLS], const int ROWS, const int COLS);
+
 int minValueIn(const int arr[], const int n);
 int maxValueIn(const int arr[], const int n);
+
 void Sort(int arr[], const int n);
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+
 void shiftLeft(int arr[], const int n, int number_of_shifts);
 void shiftRight(int arr[], const int n, int number_of_shifts);
+
 void UniqueRand(int arr[], const int n);
+void UniqueRand(int arr[ROWS][COLS], const int ROWS,const int COLS);
+
 void Search(int arr[], const int n);
+void Search(int arr[ROWS][COLS], const int ROWS,const int COLS);
+
+//#define ARRAYS_1
+#define ARRAYS_2
 
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef ARRAYS_1
 	const int n = 10;
 	int arr[n] = { 0,1,2,3,4,5,6,7,8,9 };
 	//arr[2] = 123; //Обращение ко второму элементу массива на запись
@@ -26,17 +53,17 @@ void main()
 	//   n-1;
 
 	//Ввод массива с клавиатуры:
-	FillRand(arr, n,0,5);
+	FillRand(arr, n, 0, 5);
 	//UniqueRand(arr, n);
 	//Вывод массива на экран:
 	Print(arr, n);
-	cout << "Сумма элементов массива: " << Sum(arr,n) << endl;
-	cout << "Среднее арифметическое элементов массива: " << Avg(arr,n) << endl;
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+	cout << "Среднее арифметическое элементов массива: " << Avg(arr, n) << endl;
 	cout << "Минимальное значение в массиве: " << minValueIn(arr, n) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(arr,n) << endl;
+	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl;
 	Search(arr, n);
-	Sort(arr,n);
-	Print(arr,n);
+	Sort(arr, n);
+	Print(arr, n);
 
 	//int number_of_shifts;
 	//cout << "Введите количество сдвигов влево: "; cin >> number_of_shifts;
@@ -50,6 +77,19 @@ void main()
 	double d_arr[SIZE];
 	FillRand(d_arr, SIZE);
 	Print(d_arr, SIZE);
+#endif // ARRAYS_1
+
+	int i_arr_2[ROWS][COLS];
+	FillRand(i_arr_2, ROWS, COLS,10,20);
+	Print(i_arr_2, ROWS, COLS);
+	cout << "Сумма элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
+	cout << "Среднее арифметическое элементов массива: " << Avg(i_arr_2, ROWS, COLS) << endl;
+	Search(i_arr_2, ROWS, COLS);
+	//Sort(i_arr_2, ROWS, COLS);
+	//Print(i_arr_2, ROWS, COLS);
+	//cout << delimiter << endl;
+	//UniqueRand(i_arr_2, ROWS, COLS);
+	//Print(i_arr_2, ROWS, COLS);
 }
 void FillRand(int arr[], const int n, int minRand, int maxRand)
 {
@@ -67,6 +107,16 @@ void FillRand(int arr[], const int n, int minRand, int maxRand)
 		arr[i] /= 100;
 	}
 }
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % (maxRand-minRand)+minRand;
+		}
+	}
+}
 void Print(const int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -82,6 +132,17 @@ void Print(const int arr[], const int n)
 	}
 	cout << endl;
 }
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
 int Sum(const int arr[], const int n)
 {
 	int sum = 0;
@@ -91,9 +152,25 @@ int Sum(const int arr[], const int n)
 	}
 	return sum;
 }
+int Sum(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return sum;
+}
 double Avg(const int arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
+}
+double Avg(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS,COLS) / (ROWS*COLS);
 }
 int minValueIn(const int arr[], const int n)
 {
@@ -134,6 +211,32 @@ void Sort(int arr[], const int n)
 		}
 	}
 }
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int iterations = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 :0; l < COLS; l++)
+				{
+					//arr[i][j] - выбранный элемент
+					//arr[k][l] - перебираемый элемент
+					if (arr[k][l] < arr[i][j])
+					{
+						arr[i][j] ^= arr[k][l];
+						arr[k][l] ^= arr[i][j];
+						arr[i][j] ^= arr[k][l];
+					}
+					iterations++;
+				}
+			}
+		}
+	}
+	cout << "Массив отсортирован за " << iterations << " итераций." << endl;
+}
 void shiftLeft(int arr[], const int n, int number_of_shifts)
 {
 	for (int i = 0; i < number_of_shifts; i++)
@@ -173,6 +276,33 @@ void UniqueRand(int arr[], const int n)
 		}
 	}
 }
+void UniqueRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			bool unique;
+			do
+			{
+				arr[i][j] = rand() % (ROWS * COLS);
+				unique = true;  //предполагаем,что число уникальное,но это нужно проверить:
+				for (int k = 0; k <= i; k++)
+				{
+					for (int l = 0; l < (k == i ? j : COLS); l++)
+					{
+						if (arr[i][j] == arr[k][l])
+						{
+							unique = false;
+							break;
+						}
+					}
+					if (!unique)break;
+				}
+			} while (!unique);
+		}
+	}
+}
 void Search(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -196,6 +326,45 @@ void Search(int arr[], const int n)
 				count++;
 			}
 		}
-		if (count)cout << "Значение " << arr[i] << " повторяется " << count << " раз" << endl;
+		if (count)printf("Значение %i повторяется %i раз\n",arr[i],count);
+		//if (count)cout << "Значение " << arr[i] << " повторяется " << count << " раз" << endl;
+	}
+}
+void Search(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			//Выясняем встречался ли элемент ранее
+			int met_before = false;
+			for (int k = 0; k <= i; k++)
+			{
+				for (int l = 0; l < (k == i ? j : COLS); l++)
+				{
+					if (arr[i][j] == arr[k][l])
+					{
+						met_before = true;
+						break;
+					}
+				}
+				if (met_before)break;
+			}
+			//Если элемент встречался ранее,то мы уже вывели его на экран,пропускаем следующий ход
+			if (met_before)continue;
+			//Если же элемент ранее не встречался то нужно выяснить сколько раз он повторяется
+			int count = 0; //счетчик повторений
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
+				{
+					if (arr[i][j] == arr[k][l])
+					{
+						count++;
+					}
+				}
+			}
+			if (count)printf("Значение %i повторяется %i раз \n", arr[i][j], count);
+		} 
 	}
 }
