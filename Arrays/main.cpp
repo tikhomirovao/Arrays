@@ -9,11 +9,11 @@ using std::endl;
 const int ROWS = 5;
 const int COLS = 8;
 
-void FillRand(int arr[], const int n,int minRand=0,int maxRand=100);
+void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(char arr[], const int n);
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS,int minRand = 0,int maxRand = 100);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[ROWS][COLS], double  ROWS, double COLS);
 void FillRand(char arr[ROWS][COLS], char ROWS, double COLS);
 
@@ -27,7 +27,7 @@ void Print(char arr[ROWS][COLS], char  ROWS, char COLS);
 int Sum(const int arr[], const int n);
 double Sum(const double arr[], const int n);
 char Sum(const char arr[], const int n);
-int Sum(const int arr[ROWS][COLS], const int ROWS,const int COLS);
+int Sum(const int arr[ROWS][COLS], const int ROWS, const int COLS);
 double Sum(const double arr[ROWS][COLS], double  ROWS, double COLS);
 char Sum(const char arr[ROWS][COLS], char  ROWS, char COLS);
 
@@ -74,7 +74,7 @@ void shiftRight(char arr[ROWS][COLS], const int  ROWS, const int COLS);
 void UniqueRand(int arr[], const int n);
 void UniqueRand(double arr[], const int n);
 void UniqueRand(char arr[], const int n);
-void UniqueRand(int arr[ROWS][COLS], const int ROWS,const int COLS);
+void UniqueRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 void UniqueRand(double arr[ROWS][COLS], const int  ROWS, const int COLS);
 void UniqueRand(char arr[ROWS][COLS], const int  ROWS, const int COLS);
 
@@ -82,7 +82,7 @@ void UniqueRand(char arr[ROWS][COLS], const int  ROWS, const int COLS);
 void Search(int arr[], const int n);
 void Search(double arr[], const int n);
 void Search(char arr[], const int n);
-void Search(int arr[ROWS][COLS], const int ROWS,const int COLS);
+void Search(int arr[ROWS][COLS], const int ROWS, const int COLS);
 void Search(double arr[ROWS][COLS], const int  ROWS, const int COLS);
 void Search(char arr[ROWS][COLS], const int  ROWS, const int COLS);
 
@@ -129,7 +129,7 @@ void main()
 #endif // ARRAYS_1
 
 	int i_arr_2[ROWS][COLS];
-	FillRand(i_arr_2, ROWS, COLS,10,20);
+	FillRand(i_arr_2, ROWS, COLS, 10, 20);
 	Print(i_arr_2, ROWS, COLS);
 	cout << "Сумма элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
 	cout << "Среднее арифметическое элементов массива: " << Avg(i_arr_2, ROWS, COLS) << endl;
@@ -145,7 +145,7 @@ void FillRand(int arr[], const int n, int minRand, int maxRand)
 	for (int i = 0; i < n; i++)
 	{
 		//cin >> arr[i];
-		arr[i] = rand() % (maxRand-minRand)+minRand;
+		arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
 }
 void FillRand(int arr[], const int n)
@@ -178,7 +178,7 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, 
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = rand() % (maxRand-minRand)+minRand;
+			arr[i][j] = rand() % (maxRand - minRand) + minRand;
 		}
 	}
 }
@@ -346,7 +346,7 @@ char Avg(char arr[], const int n)
 }
 double Avg(const int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	return (double)Sum(arr, ROWS,COLS) / (ROWS*COLS);
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 double Avg(const double arr[ROWS][COLS], double  ROWS, double COLS)
 {
@@ -527,7 +527,7 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 		{
 			for (int k = i; k < ROWS; k++)
 			{
-				for (int l = k == i ? j + 1 :0; l < COLS; l++)
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
 				{
 					//arr[i][j] - выбранный элемент
 					//arr[k][l] - перебираемый элемент
@@ -661,8 +661,8 @@ void shiftRight(int arr[], const int n, int number_of_shifts)
 {
 	for (int i = 0; i < number_of_shifts; i++)
 	{
-		int buffer = arr[n-1];
-		for (int i = n-1; i > 0; i--)
+		int buffer = arr[n - 1];
+		for (int i = n - 1; i > 0; i--)
 		{
 			arr[i] = arr[i - 1];
 		}
@@ -883,7 +883,7 @@ void Search(int arr[], const int n)
 				count++;
 			}
 		}
-		if (count)printf("Значение %i повторяется %i раз\n",arr[i],count);
+		if (count)printf("Значение %i повторяется %i раз\n", arr[i], count);
 		//if (count)cout << "Значение " << arr[i] << " повторяется " << count << " раз" << endl;
 	}
 }
@@ -982,7 +982,7 @@ void Search(int arr[ROWS][COLS], const int ROWS, const int COLS)
 				}
 			}
 			if (count)printf("Значение %i повторяется %i раз \n", arr[i][j], count);
-		} 
+		}
 	}
 }
 void Search(double arr[ROWS][COLS], const int  ROWS, const int COLS)
