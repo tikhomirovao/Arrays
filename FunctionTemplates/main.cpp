@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
 const int ROWS = 3;
@@ -50,16 +50,16 @@ void main()
 	FillRand(arr, n);
 	UniqueRand(arr, n);
 	Print(arr, n);
-	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Среднее арифметическое элементов массива: " << Avg(arr, n) << endl;
-	cout << "Минимальное значение в массиве:  " << minValueIn(arr, n) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Sum(arr, n) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Avg(arr, n) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ:  " << minValueIn(arr, n) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << maxValueIn(arr, n) << endl;
 	Search(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
 
 	int number_of_shifts;
-	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ: "; cin >> number_of_shifts;
 	shiftLeft(arr, n, number_of_shifts);
 	Print(arr, n);
 	shiftRight(arr, n, number_of_shifts);
@@ -77,28 +77,28 @@ void main()
 	FillRand(i_arr_2, ROWS, COLS);
 	FillRand(d_arr_2, ROWS, COLS);
 	FillRand(c_arr_2, ROWS, COLS);
-	cout << "Сгенерированные массивы" << endl;
+	cout << "РЎРіРµРЅРµСЂРёСЂРѕРІР°РЅРЅС‹Рµ РјР°СЃСЃРёРІС‹" << endl;
 	Print(i_arr_2, ROWS, COLS);
 	Print(d_arr_2, ROWS, COLS);
 	Print(c_arr_2, ROWS, COLS);
 	cout << endl;
-	cout << "Сумма элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
-	cout << "Сумма элементов массива: " << Sum(d_arr_2, ROWS, COLS) << endl;
-	cout << "Сумма элементов массива: " << Sum(c_arr_2, ROWS, COLS) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Sum(i_arr_2, ROWS, COLS) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Sum(d_arr_2, ROWS, COLS) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Sum(c_arr_2, ROWS, COLS) << endl;
 	cout << endl;
-	cout << "Среднее-арифметическое элементов массива: " << Avg(i_arr_2, ROWS, COLS) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << Avg(d_arr_2, ROWS, COLS) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << Avg(c_arr_2, ROWS, COLS) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Avg(i_arr_2, ROWS, COLS) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Avg(d_arr_2, ROWS, COLS) << endl;
+	cout << "РЎСЂРµРґРЅРµРµ-Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << Avg(c_arr_2, ROWS, COLS) << endl;
 	cout << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(i_arr_2, ROWS, COLS) << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(d_arr_2, ROWS, COLS) << endl;
-	cout << "Минимальное значение в массиве: " << minValueIn(c_arr_2, ROWS, COLS) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << minValueIn(i_arr_2, ROWS, COLS) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << minValueIn(d_arr_2, ROWS, COLS) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << minValueIn(c_arr_2, ROWS, COLS) << endl;
 	cout << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(d_arr_2, ROWS, COLS) << endl;
-	cout << "Максимальное значение в массиве: " << maxValueIn(c_arr_2, ROWS, COLS) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << maxValueIn(d_arr_2, ROWS, COLS) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РјР°СЃСЃРёРІРµ: " << maxValueIn(c_arr_2, ROWS, COLS) << endl;
 	cout << endl;
-	cout << "Введите количество сдвигов влево: "; cin >> number_of_shifts;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ РІР»РµРІРѕ: "; cin >> number_of_shifts;
 	shiftLeft(i_arr_2, ROWS, COLS, number_of_shifts);
 	Print(i_arr_2, ROWS, COLS); cout << endl;
 	shiftLeft(d_arr_2, ROWS, COLS, number_of_shifts);
@@ -106,7 +106,7 @@ void main()
 	shiftLeft(c_arr_2, ROWS, COLS, number_of_shifts);
 	Print(c_arr_2, ROWS, COLS); cout << endl;
 	cout << endl;
-	cout << "Введите количество сдвигов вправо: "; cin >> number_of_shifts;
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРґРІРёРіРѕРІ РІРїСЂР°РІРѕ: "; cin >> number_of_shifts;
 	shiftRight(i_arr_2, ROWS, COLS, number_of_shifts);
 	Print(i_arr_2, ROWS, COLS); cout << endl;
 	shiftRight(d_arr_2, ROWS, COLS, number_of_shifts);
@@ -114,7 +114,7 @@ void main()
 	shiftRight(c_arr_2, ROWS, COLS, number_of_shifts);
 	Print(c_arr_2, ROWS, COLS); cout << endl;
 	cout << endl;
-	cout << "Сортировочка" << endl;
+	cout << "РЎРѕСЂС‚РёСЂРѕРІРѕС‡РєР°" << endl;
 	Sort(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS); cout << endl;
 	Sort(d_arr_2, ROWS, COLS);
@@ -122,14 +122,14 @@ void main()
 	Sort(c_arr_2, ROWS, COLS);
 	Print(c_arr_2, ROWS, COLS); cout << endl;
 	cout << endl;
-	cout << "Поиск повторов " << endl;
+	cout << "РџРѕРёСЃРє РїРѕРІС‚РѕСЂРѕРІ " << endl;
 	Search(i_arr_2, ROWS, COLS); cout << endl;
 	Search(d_arr_2, ROWS, COLS); cout << endl;
 	Search(c_arr_2, ROWS, COLS); cout << endl;
 }
 void FillRand(int arr[], const int n)
 {
-	//rand();	//возвращает псевдослучайное число в диапазоне от 0 до 32 767 (MAX_RAND)
+	//rand();	//РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕСЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767 (MAX_RAND)
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % 100;
@@ -137,7 +137,7 @@ void FillRand(int arr[], const int n)
 }
 void FillRand(double arr[], const int n)
 {
-	//rand();	//возвращает псевдослучайное число в диапазоне от 0 до 32 767 (MAX_RAND)
+	//rand();	//РІРѕР·РІСЂР°С‰Р°РµС‚ РїСЃРµРІРґРѕСЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 32 767 (MAX_RAND)
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand() % 10000;
@@ -177,7 +177,7 @@ void FillRand(char arr[ROWS][COLS], const int ROWS, const int COLS)
 }
 template<typename T>void Print(const T arr[], const int n)
 {
-	//Вывод массива на экран:
+	//Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° РЅР° СЌРєСЂР°РЅ:
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
@@ -197,7 +197,7 @@ template<typename T>void Print(const T arr[ROWS][COLS], const int ROWS, const in
 }
 template<typename T>T Sum(const T arr[], const int n)
 {
-	//Вычисление суммы элементов массива:
+	//Р’С‹С‡РёСЃР»РµРЅРёРµ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°:
 	T sum = 0;
 	for (int i = 0; i < n; i++)
 	{
@@ -271,12 +271,12 @@ template<typename T> void Sort(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		//Счетчик 'i' выбирает элемент, в который нужно поместить минимальное значение из перебираемых
+		//РЎС‡РµС‚С‡РёРє 'i' РІС‹Р±РёСЂР°РµС‚ СЌР»РµРјРµРЅС‚, РІ РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ РїРѕРјРµСЃС‚РёС‚СЊ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· РїРµСЂРµР±РёСЂР°РµРјС‹С…
 		for (int j = i + 1; j < n; j++)
 		{
-			//Счетчик 'j' перебирает элементы, в поисках минимального
-			//arr[i] - выбранный элемент
-			//arr[j] - перебираемый элемент
+			//РЎС‡РµС‚С‡РёРє 'j' РїРµСЂРµР±РёСЂР°РµС‚ СЌР»РµРјРµРЅС‚С‹, РІ РїРѕРёСЃРєР°С… РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ
+			//arr[i] - РІС‹Р±СЂР°РЅРЅС‹Р№ СЌР»РµРјРµРЅС‚
+			//arr[j] - РїРµСЂРµР±РёСЂР°РµРјС‹Р№ СЌР»РµРјРµРЅС‚
 			if (arr[j] < arr[i])
 			{
 				T buffer = arr[i];
@@ -471,7 +471,7 @@ template<typename T> void Search(T arr[], const int n)
 				count++;
 			}
 		}
-		if (count)std::cout << "Значение " << arr[i] << " повторяется " << count << " раз" << endl;
+		if (count)std::cout << "Р—РЅР°С‡РµРЅРёРµ " << arr[i] << " РїРѕРІС‚РѕСЂСЏРµС‚СЃСЏ " << count << " СЂР°Р·" << endl;
 	}
 }
 template<typename T> void Search(T arr[ROWS][COLS], const int ROWS, const int COLS)
@@ -505,7 +505,7 @@ template<typename T> void Search(T arr[ROWS][COLS], const int ROWS, const int CO
 					}
 				}
 			}
-			if (count)std::cout << "Значение " << arr[i][j] << " повторяется " << count << " раз" << endl;
+			if (count)std::cout << "Р—РЅР°С‡РµРЅРёРµ " << arr[i][j] << " РїРѕРІС‚РѕСЂСЏРµС‚СЃСЏ " << count << " СЂР°Р·" << endl;
 		}
 	}
 }
