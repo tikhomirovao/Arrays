@@ -80,7 +80,7 @@ void main()
 	shiftRight(c_arr_2, ROWS, COLS, number_of_shifts);
 	Print(c_arr_2, ROWS, COLS); cout << endl;
 	cout << endl;
-	cout << "Сортировочка" << endl;
+	cout << "Сортировка" << endl;
 	Sort(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS); cout << endl;
 	Sort(d_arr_2, ROWS, COLS);
